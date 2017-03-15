@@ -8,7 +8,7 @@ The **Wifi-Bomb** project disrupts the connection of connected device to a route
 Requirement
 -------------
 <ul>
-<li> Wemos D1 Mini V2 (ESP8266) [here][1] </li>
+<li> Wemos D1 Mini V2 (ESP8266) </li>
 <li> ON/OFF Switch </li>
 <li> 2*battery AAA LR03 </li>
 </ul>
