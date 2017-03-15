@@ -20,3 +20,7 @@ Here is the electrical diagram :
 
 ![enter image description here](http://img4.hostingpics.net/pics/265596schemaeletrique.png)
 ----------
+
+
+
+[1]: https://hackspark.fr/fr/wemos-d1-mini-v2-esp8266-arduino-compatible-layout-wifi-80-160mhz-4mb-flash.html
