@@ -12,7 +12,7 @@ Requirement
  * 2*battery AAA LR03
  * ON/OFF Switch 
 
--![enter image description here](http://img4.hostingpics.net/pics/287422final.png)
+![enter image description here](http://img4.hostingpics.net/pics/287422final.png)
 
 
 
@@ -23,7 +23,7 @@ At the beginning, we wanted that the Wifi-Bomb project disrupts the connection o
 
 Then, We used a "node MCU" in order to "jam" via a lua code because this system allows to change the MAC address. On the other hand, we could not make an access point via this solution. Moreover, the associated idea is not adapted to our needs, so we have abandoned this solution.
 
--![Node MCU](http://img4.hostingpics.net/pics/747267nodemcu.png)
+![Node MCU](http://img4.hostingpics.net/pics/747267nodemcu.png)
 
 We looked for other type of wifi attack. We found a way to slow down the speed of a wifi connection.
 
