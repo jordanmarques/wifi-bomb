@@ -25,6 +25,20 @@ After that, we used a "node MCU" in order to "jam" the network via a LUA code be
 
 ![Node MCU](http://www.webondevices.com/wp-content/uploads/2015/11/113990105-1.jpg)
 
+Here's the nodemcu code for change the mac address in lua. 
+```C
+wifi.setmode(1)
+wifi.sta.config("SSID","PSWD")
+wifi.sta.setmac("\000\217\209\006\027\000")
+tmr.alarm(0, 6000, 1, function()
+    print("Start")
+    wifi.sta.connect()
+    print(wifi.sta.getip())
+    print("End")
+end )
+```
+
+
 We looked for other type of wifi attack. We found a way to slow down the speed of a wifi connection.
 
 So we developed a code to connect to a router. 
