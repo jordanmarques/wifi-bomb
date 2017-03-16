@@ -20,3 +20,5 @@ Problems encountered
 -------------
 
 At the beginning, we wanted that the Wifi-Bomb project disrupts the connection of connected device to a router. But the application requires to know the MAC address of the connected device. We could'nt change the mac address with the ESP8266 library. Then we looked at the code of the library "Wifi Manager" to see an example of inclusion of libraries.
+
+We looked for other type of wifi attack. We found a way to slow down the speed of a wifi connection.
