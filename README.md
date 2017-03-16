@@ -16,10 +16,12 @@ Requirement
 
 
 
-Problems encountered 
+Dashboard 
 -------------
 
 At the beginning, we wanted the Wifi-Bomb project to disrupt the connection of a connected device to the router. But the application requires to know the MAC address of the connected device. We could'nt change the mac address with the ESP8266 library. Then, we looked the code of the library "Wifi Manager" to see an example of inclusion of libraries.
+
+This is the link of the project: https://github.com/jordanmarques/wifi-bomb/blob/mac_address/wifi-bomb.ino
 
 After that, we used a "node MCU" in order to "jam" the network via a LUA code because we can change the MAC address with it. But onn the other hand, we could not make an access point via this solution. Moreover, the associated idea is not adapted to our needs, so we have abandoned this solution.
 
