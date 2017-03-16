@@ -14,10 +14,9 @@ ESP8266WebServer server(80);
 
 void setup() { 
  Serial.begin(115200);
-
- //connectWifi("PIMOUSSE", "jojolalala");
  
  configureAccesPoint();
+ configureHttpServer();
  configureLED();
 }
 
@@ -39,6 +38,10 @@ void configureAccesPoint(){
   IPAddress myIP = WiFi.softAPIP();
   Serial.print("AP IP address: ");
   Serial.println(myIP);
+  
+}
+
+void configureHttpServer(){
   server.on("/", handleRoot);
   server.on("/bomb", handleBomb);
   server.begin();
@@ -61,7 +64,6 @@ void handleRoot() {
     <h1> Wifi Bomb </h1>\
     <br>SSID:<br>\
     <input type='text' name='SSID'><br>Password:<br>\
-    <input type='text' name='Password'><br>Mac-Address:<br>\
     <button type='submit'> Bomb This </button>\
   </form>\
   </body> </html>\
@@ -94,6 +96,7 @@ void bomb(char* ssid, char* password){
    memset(pkt, 0, sizeof(pkt));
 
    while(true){
+    Serial.println("Enter in Bomb Loop");
     WiFiUDP udp;
     udp.beginPacketMulticast(WiFi.softAPIP(), 1, IPAddress(255,255,255,255), 1);
     udp.write(pkt, sizeof(pkt));
@@ -105,6 +108,7 @@ void bomb(char* ssid, char* password){
 void connectWifi(char* ssid, char* password){
   
   WiFi.begin(ssid, password);
+  WiFi.mode(WIFI_STA);
 
   Serial.println("");
   Serial.print("Try to connect ");
