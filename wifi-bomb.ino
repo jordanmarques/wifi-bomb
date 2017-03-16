@@ -84,15 +84,35 @@ void handleBomb(){
 void bomb(char ssid[], char password[], String amac){
 
   byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-  wifi_set_macaddr(SOFTAP_IF, &mac[0]);
+  
+  if(wifi_set_macaddr(SOFTAP_IF, &mac[0])){
+    Serial.println("Mac Adress change");
+  }
+  else{
+    Serial.println("Mac Adress didn't change");
+  }
 
   while(true){
-    WiFi.begin(ssid, password);
+    connectWifi(ssid, password);
     delay(5000);
     WiFi.disconnect();
     delay(2000);
   }
   
+}
+
+void connectWifi(char* ssid, char* password){
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  
+  Serial.println("");
+  Serial.println("WiFi connected");  
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
 }
 
 void blink(){
