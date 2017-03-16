@@ -2,7 +2,7 @@
 
 
 
-The Wifi-Bomb project disrupts the connection of connected device to a router. The application requires to know the MAC address of the connected device.
+The Wifi-Bomb project slowed down the speed of a router. For this, it performs a DDOS via the sending of a large number of network packets.
 
 
 
