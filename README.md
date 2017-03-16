@@ -10,3 +10,4 @@ Requirement
 -------------
  * Wemos D1 Mini V2 (ESP8266)
  * 2*battery AAA LR03
+ * ON/OFF Switch 
