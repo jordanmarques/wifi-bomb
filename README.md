@@ -54,6 +54,7 @@ tmr.alarm(0, 6000, 1, function()
     print("End")
 end )
 ```
+We continued the searches and found a github [repository](https://github.com/RandDruid/esp8266-deauth) that allows us to deauthenticate of a router. The difference with the original project is this one is more advanced than the first project. Indeed, it makes possible to jam the connection between a router and all the devices connected to it.
 
 We looked for another type of wifi attack. We found a [tutorial](https://yoursunny.com/t/2016/WiFi-flood/) to slow down the speed of a wifi connection. In this tutorial we found a code which create many network packets, then send them to a router. Each packet contain 1000 byte. This method is called a DDOS.
 
