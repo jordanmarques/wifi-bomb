@@ -2,7 +2,7 @@
 
 ### Introduction
 
-The goal of Wifi-Bomb project is to slow down the speed of a router. For this, it performs a DDOS attack(distributed denial of service attack) by sending a lot of network packets. So the process is to flood the network up to the dysfunction of the router. The arduino use the library [Wifi Manager](https://github.com/tzapu/WiFiManager) to find the routers close to the arduino. Then, the user has to connect to the following url 192.168.4.1 which is the default url for Wifi Manager. Then he will see all the routers close to him. To finish, the user has to choose the router to attack and the project will DDOS this one. When the arduino is attacking a router, the led turns.  
+The **Wifi-Bomb** project disrupts the connection of connected device to a router. The application requires to know the MAC address of the connected device. **The mac address must be in a predefined format)**, at first we did not respect this format, so the project didn't work. But we did a program that slow down the speed of a router. For this, it performs a DDOS attack(distributed denial of service attack) by sending a lot of network packets. So the process is to flood the network up to the dysfunction of the router. The arduino use the library [Wifi Manager](https://github.com/tzapu/WiFiManager) to find the routers close to the arduino. Then, the user has to connect to the following url 192.168.4.1 which is the default url for Wifi Manager. Then he will see all the routers close to him. To finish, the user has to choose the router to attack and the project will DDOS this one. When the arduino is attacking a router, the led turns.  
 
 Requirement
 -------------
@@ -33,6 +33,7 @@ byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
     Serial.println("Mac Adress didn't change");
   }
 ```
+**However, we noticed that the mac address requires a predefined format. Indeed, at the beginning of the test, we put a random mac address and it didn't work. Testing with a real mac address, the program worked well.**
 
 Then, we looked the code of the library "Wifi Manager" to see an example of inclusion of libraries.
 
