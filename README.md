@@ -1,11 +1,8 @@
 # Wifi-Bomb
 
-
+### Introduction
 
 The goal of Wifi-Bomb project is to slow down the speed of a router. For this, it performs a DDOS attack(distributed denial of service attack) by sending a lot of network packets. So the process is to flood the network up to the dysfunction of the router. The arduino use the library [Wifi Manager](https://github.com/tzapu/WiFiManager) to find the routers close to the arduino. Then, the user has to connect to the following url 192.168.4.1 which is the default url for Wifi Manager. Then he will see all the routers close to him. To finish, the user has to choose the router to attack and the project will DDOS this one. When the arduino is attacking a router, the led turns.  
-
-![description](http://static.crazyws.fr/resources/blog/2011/11/ddos-attack-maitres-esclaves-victime-schema.png)
-
 
 Requirement
 -------------
