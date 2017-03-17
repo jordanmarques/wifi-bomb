@@ -19,7 +19,22 @@ Requirement
 Dashboard 
 -------------
 
-At the beginning, we wanted the Wifi-Bomb project to disrupt the connection of a connected device to the router. But the application requires to know the MAC address of the connected device. We could'nt change the mac address with the ESP8266 library. Then, we looked the code of the library "Wifi Manager" to see an example of inclusion of libraries.
+At the beginning, we wanted the Wifi-Bomb project to disrupt the connection of a connected device to the router. But the application requires to know the MAC address of the connected device. We could'nt change the mac address with the ESP8266 library. 
+
+We tried the following code in order to change the mac address. We found that the wifi_set_macaddr () method didn't work because the method returned always false.
+
+```C
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+  
+  if(wifi_set_macaddr(SOFTAP_IF, &mac[0])){
+    Serial.println("Mac Adress change");
+  }
+  else{
+    Serial.println("Mac Adress didn't change");
+  }
+```
+
+Then, we looked the code of the library "Wifi Manager" to see an example of inclusion of libraries.
 
 This is the link of the project: https://github.com/jordanmarques/wifi-bomb/blob/mac_address/wifi-bomb.ino
 
