@@ -19,6 +19,8 @@ Requirement
 Dashboard 
 -------------
 
+### Step 1 - Mono deauthentication
+
 At the beginning, we wanted the Wifi-Bomb project to disrupt the connection of a connected device to the router. But the application requires to know the MAC address of the connected device. We could'nt change the mac address with the ESP8266 library. 
 
 We tried the following code in order to change the mac address. We found that the wifi_set_macaddr () method didn't work because the method returned always false.
@@ -38,6 +40,8 @@ Then, we looked the code of the library "Wifi Manager" to see an example of incl
 
 This is the link of the project: https://github.com/jordanmarques/wifi-bomb/blob/mac_address/wifi-bomb.ino
 
+### Step 2 - Change Mac address with Nodemcu
+
 After that, we used a "node MCU" in order to "jam" the network via a LUA code because we can change the MAC address with it. But onn the other hand, we could not make an access point via this solution. Moreover, the associated idea is not adapted to our needs, so we have abandoned this solution.
 
 ![Node MCU](http://www.webondevices.com/wp-content/uploads/2015/11/113990105-1.jpg)
@@ -54,7 +58,12 @@ tmr.alarm(0, 6000, 1, function()
     print("End")
 end )
 ```
+
+### Step 3 - Multi deauthenticate
+
 We continued the searches and found a github [repository](https://github.com/RandDruid/esp8266-deauth) that allows us to deauthenticate of a router. The difference with the original project is this one is more advanced than the first project. Indeed, it makes possible to jam the connection between a router and all the devices connected to it.
+
+### Step 4 - DDOS 
 
 We looked for another type of wifi attack. We found a [tutorial](https://yoursunny.com/t/2016/WiFi-flood/) to slow down the speed of a wifi connection. In this tutorial we found a code which create many network packets, then send them to a router. Each packet contain 1000 byte. This method is called a DDOS.
 
